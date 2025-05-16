@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Купуйте побутову техніку, телевізори, гаджети та електроніку для дому в інтернет-магазині Nowe. Зручний пошук, швидке оформлення замовлення та доставка по Україні.">
+  <meta name="keywords" content="техніка для кухні, техніка для дому, телевізори та мультимедіа, смарт-годинники та гаджети, краса і здоровʼя">
+  <meta name="author" content="nowe">
+  <meta name="robots" content="index, follow">
+  <title>Побутова техніка та гаджети для дому — Nowe</title>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="background-elements">
+    <div class="circle">
+      <div class="bubble-overlay"></div>
+      <div class="inside-object">
+        <img src="hairdryer.png" alt="hairdryer" />
+      </div>
+    </div>
+    <div class="circle">
+      <div class="bubble-overlay"></div>
+      <div class="inside-object">
+        <img src="vacuum-cleaner.png" alt="vacuum-cleaner" />
+      </div>
+    </div>
+    <div class="circle">
+      <div class="bubble-overlay"></div>
+      <div class="inside-object">
+        <img src="mixer.png" alt="mixer" />
+      </div>
+    </div>
+    <div class="circle">
+      <div class="bubble-overlay"></div>
+      <div class="inside-object">
+        <img src="oven.png" alt="oven" />
+      </div>
+    </div>
+    <div class="circle">
+      <div class="bubble-overlay"></div>
+      <div class="inside-object">
+        <img src="blender.png" alt="blender" />
+      </div>
+    </div>
+    <div class="circle">
+      <div class="bubble-overlay"></div>
+      <div class="inside-object">
+        <img src="meat-grinder.png" alt="meat-grinder" />
+      </div>
+    </div>
+    <div class="circle">
+      <div class="bubble-overlay"></div>
+      <div class="inside-object">
+        <img src="washing-machine.png" alt="washing-machine" />
+      </div>
+    </div>
+    <div class="circle">
+      <div class="bubble-overlay"></div>
+      <div class="inside-object">
+        <img src="microwave-oven.png" alt="microwave-oven" />
+      </div>
+    </div>
+  </div>
+
+  <img src="nowe.com.ua logo robi.png" alt="Логотип" class="top-left-logo">
+
+  <div class="container">
+    <h2>Калькулятор масштабування</h2>
+
+    <label for="width">Ширина зображення (px):</label>
+    <input type="number" id="width" required>
+
+    <label for="height">Висота зображення (px):</label>
+    <input type="number" id="height" required>
+
+    <label for="mode">Режим:</label>
+    <select id="mode" onchange="toggleMultiplier()">
+      <option value="standard">Стандартне масштабування</option>
+      <option value="extended">Збільшене з обрізкою</option>
+    </select>
+
+    <div id="multiplier-group" class="hidden">
+      <label for="multiplier">Коефіцієнт збільшення:</label>
+      <select id="multiplier">
+        <option value="1.0">1.0 (без змін)</option>
+        <option value="1.1">1.1</option>
+        <option value="1.2">1.2</option>
+        <option value="1.3">1.3</option>
+        <option value="1.4">1.4</option>
+        <option value="1.5">1.5</option>
+        <option value="1.6">1.6</option>
+        <option value="1.7">1.7</option>
+        <option value="1.8">1.8</option>
+        <option value="1.9">1.9</option>
+        <option value="2.0">2.0</option>
+      </select>
+    </div>
+
+    <button onclick="calculate()">Обрахувати</button>
+
+    <div id="result"></div>
+  </div>
+  <div class="contact-box">
+    <a href="mailto:info@nowe.com.ua" target="_blank">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 4h16v16H4V4zm8 7.586l-5.707-5.707L5.586 7 12 13.414 18.414 7l-1.707-1.707L12 11.586z"/></svg>
+      info@nowe.com.ua
+    </a>
+    <a href="https://t.me/nowe_ua" target="_blank">
+      <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 24 24">
+          <path d="M 20.572266 3.0117188 C 20.239891 2.9764687 19.878625 3.028375 19.515625 3.171875 C 19.065625 3.348875 12.014406 6.3150313 5.4414062 9.0820312 L 3.2695312 9.9960938 C 2.4285313 10.337094 2.0039062 10.891672 2.0039062 11.638672 C 2.0039062 12.161672 2.22525 12.871063 3.28125 13.289062 L 6.9472656 14.757812 C 7.2642656 15.708813 8.0005469 17.916906 8.1855469 18.503906 C 8.2955469 18.851906 8.5733906 19.728594 9.2753906 19.933594 C 9.4193906 19.982594 9.5696563 20.007813 9.7226562 20.007812 C 10.165656 20.007812 10.484625 19.801641 10.640625 19.681641 L 12.970703 17.710938 L 15.800781 20.328125 C 15.909781 20.439125 16.486719 21 17.261719 21 C 18.228719 21 18.962234 20.195016 19.115234 19.416016 C 19.198234 18.989016 21.927734 5.2870625 21.927734 5.2890625 C 22.172734 4.1900625 21.732219 3.6199531 21.449219 3.3769531 C 21.206719 3.1694531 20.904641 3.0469688 20.572266 3.0117188 z M 19.910156 5.171875 C 19.533156 7.061875 17.478016 17.378234 17.166016 18.865234 L 13.029297 15.039062 L 10.222656 17.416016 L 11 14.375 C 11 14.375 16.362547 8.9468594 16.685547 8.6308594 C 16.945547 8.3778594 17 8.2891719 17 8.2011719 C 17 8.0841719 16.939781 8 16.800781 8 C 16.675781 8 16.506016 8.1197812 16.416016 8.1757812 C 15.272669 8.8885973 10.404094 11.662239 8.0078125 13.025391 L 4.53125 11.636719 L 6.21875 10.927734 C 10.51775 9.1177344 18.174156 5.893875 19.910156 5.171875 z"></path>
+      </svg>
+      @nowe_ua
+    </a>
+    <a href="https://www.instagram.com/nowe.ua" target="_blank">
+      <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 26 26">
+          <path d="M 7.546875 0 C 3.390625 0 0 3.390625 0 7.546875 L 0 18.453125 C 0 22.609375 3.390625 26 7.546875 26 L 18.453125 26 C 22.609375 26 26 22.609375 26 18.453125 L 26 7.546875 C 26 3.390625 22.609375 0 18.453125 0 Z M 7.546875 2 L 18.453125 2 C 21.527344 2 24 4.46875 24 7.546875 L 24 18.453125 C 24 21.527344 21.53125 24 18.453125 24 L 7.546875 24 C 4.472656 24 2 21.53125 2 18.453125 L 2 7.546875 C 2 4.472656 4.46875 2 7.546875 2 Z M 20.5 4 C 19.671875 4 19 4.671875 19 5.5 C 19 6.328125 19.671875 7 20.5 7 C 21.328125 7 22 6.328125 22 5.5 C 22 4.671875 21.328125 4 20.5 4 Z M 13 6 C 9.144531 6 6 9.144531 6 13 C 6 16.855469 9.144531 20 13 20 C 16.855469 20 20 16.855469 20 13 C 20 9.144531 16.855469 6 13 6 Z M 13 8 C 15.773438 8 18 10.226563 18 13 C 18 15.773438 15.773438 18 13 18 C 10.226563 18 8 15.773438 8 13 C 8 10.226563 10.226563 8 13 8 Z"></path>
+          </svg>
+      @nowe.ua
+    </a>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

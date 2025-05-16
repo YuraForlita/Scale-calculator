@@ -53,7 +53,7 @@
         : "звичайне вписування";
 
       resultDiv.innerHTML = `
-        <strong>${scale.toFixed(1)}%</strong> по <strong>${dimension}</strong><br>
+        <strong>${scale.toFixed(1).replace('.', ',')}%</strong> по <strong>${dimension}</strong><br>
         (${description})
       `;
     }

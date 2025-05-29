@@ -1,59 +1,42 @@
-  const openBtn = document.querySelector('.open-modal-btn');
-  const closeBtn = document.querySelector('.close-modal-btn');
-  const modal = document.querySelector('.modal-overlay');
+const imageInput = document.getElementById("imageInput");
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+const downloadBtn = document.getElementById("downloadBtn");
 
-  openBtn.addEventListener('click', () => {
-    modal.style.display = 'flex';
-  });
+imageInput.addEventListener("change", (event) => {
+  const file = event.target.files[0];
+  if (!file) return;
 
-  closeBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
-  });
+  const img = new Image();
+  img.onload = () => {
+    // Очистити полотно
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  window.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.style.display = 'none';
-    }
-  });
+    // Білий фон
+    ctx.fillStyle = "#ffffff";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    function toggleMultiplier() {
-      const mode = document.getElementById("mode").value;
-      const group = document.getElementById("multiplier-group");
-      group.classList.toggle("hidden", mode === "standard");
-    }
+    // Обчислити масштаб до 1000x1000
+    const maxSize = 1000;
+    let scale = Math.min(maxSize / img.width, maxSize / img.height);
+    const newWidth = img.width * scale;
+    const newHeight = img.height * scale;
 
-    function calculate() {
-      const width = parseFloat(document.getElementById("width").value);
-      const height = parseFloat(document.getElementById("height").value);
-      const mode = document.getElementById("mode").value;
-      const multiplier = parseFloat(document.getElementById("multiplier").value);
-      const resultDiv = document.getElementById("result");
+    // Обчислити координати для центрування
+    const x = (canvas.width - newWidth) / 2;
+    const y = (canvas.height - newHeight) / 2;
 
-      if (!width || !height || width <= 0 || height <= 0) {
-        resultDiv.textContent = "Будь ласка, введіть коректні значення ширини і висоти.";
-        return;
-      }
+    // Намалювати зображення
+    ctx.drawImage(img, x, y, newWidth, newHeight);
 
-      const baseSize = 1000;
-      let scale;
+    downloadBtn.style.display = "inline-block";
+  };
+  img.src = URL.createObjectURL(file);
+});
 
-      if (width >= height) {
-        scale = (baseSize / width) * 100;
-      } else {
-        scale = (baseSize / height) * 100;
-      }
-
-      if (mode === "extended") {
-        scale *= multiplier;
-      }
-
-      const dimension = width >= height ? "ширині" : "висоті";
-      const description = mode === "extended"
-        ? `з коефіцієнтом x${multiplier}`
-        : "звичайне вписування";
-
-      resultDiv.innerHTML = `
-        <strong>${scale.toFixed(1).replace('.', ',')}%</strong> по <strong>${dimension}</strong><br>
-        (${description})
-      `;
-    }
+downloadBtn.addEventListener("click", () => {
+  const link = document.createElement("a");
+  link.download = "image_1200x1200.png";
+  link.href = canvas.toDataURL("image/png");
+  link.click();
+});

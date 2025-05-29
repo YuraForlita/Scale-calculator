@@ -17,7 +17,7 @@ imageInput.addEventListener("change", (event) => {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     // Обчислити масштаб до 1000x1000
-    const maxSize = 1000;
+    const maxSize = 1100;
     let scale = Math.min(maxSize / img.width, maxSize / img.height);
     const newWidth = img.width * scale;
     const newHeight = img.height * scale;

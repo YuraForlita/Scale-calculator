@@ -8,26 +8,19 @@ body {
   text-align: center;
   position: relative;
 }
-
-.top-left-logo {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 180px;
-  z-index: 10;
-}
-
-input {
-  margin-bottom: 20px;
+input,
+button {
+  margin: 10px;
 }
 canvas {
-  border: 1px solid #ccc;
-  margin-top: 20px;
-  background: white;
-  width: 400px;
-  height: auto; 
+  display: none;
 }
-
+#previewArea img {
+  max-width: 150px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  background: white;
+}
 button {
   padding: 10px 20px;
   margin-top: 20px;

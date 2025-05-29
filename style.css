@@ -8,6 +8,13 @@ body {
   text-align: center;
   position: relative;
 }
+.top-left-logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 180px;
+  z-index: 10;
+}
 input,
 button {
   margin: 10px;
